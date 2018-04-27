@@ -10,6 +10,7 @@ export const UPDATE_LANE = 'UPDATE_LANE';
 export const DELETE_LANE = 'DELETE_LANE';
 export const EDIT_LANE = 'EDIT_LANE';
 export const CREATE_LANES = 'CREATE_LANES';
+export const FETCH_LANES = "FETCH_LANES";
 // Export Actions
 
 export function createLanes(lanesData) {
@@ -23,7 +24,7 @@ export function fetchLanes() {
     return (dispatch) => {
         return callApi('lanes').then(res => {
             const normalized = normalize(res.lanes, lanes);
-            const { lanes: normalizedLanes } = normalized.entities;
+            const { lanes: normalizedLanes, notes } = normalized.entities;
 
             dispatch(createLanes(normalizedLanes));
             dispatch(createNotes(notes));

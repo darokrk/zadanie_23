@@ -1,6 +1,7 @@
 // Import Actions
 import {
   CREATE_LANE,
+  CREATE_LANES,
   UPDATE_LANE,
   DELETE_LANE,
   EDIT_LANE

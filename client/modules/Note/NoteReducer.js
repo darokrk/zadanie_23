@@ -1,5 +1,5 @@
 // Import Actions
-import { CREATE_NOTE, UPDATE_NOTE, DELETE_NOTE, EDIT_NOTE } from './NoteActions';
+import { CREATE_NOTE, CREATE_NOTES, UPDATE_NOTE, DELETE_NOTE, EDIT_NOTE } from './NoteActions';
 
 import omit from 'lodash/omit';
 
