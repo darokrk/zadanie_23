@@ -37,6 +37,7 @@ import Helmet from 'react-helmet';
 import routes from '../client/routes';
 import { fetchComponentData } from './util/fetchData';
 import lanes from './routes/lane.routes';
+import notes from './routes/note.routes';
 import dummyData from './dummyData';
 import serverConfig from './config';
 
