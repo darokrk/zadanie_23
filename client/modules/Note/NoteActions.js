@@ -5,6 +5,14 @@ export const UPDATE_NOTE = 'UPDATE_NOTE';
 export const DELETE_NOTE = 'DELETE_NOTE';
 export const EDIT_NOTE = 'EDIT_NOTE';
 // Export Actions
+
+export function createNotes(notesData) {
+	return {
+		type: CREATE_NOTES,
+		notes: notesData
+	};
+}
+
 export function createNote(note, laneId) {
     return {
         type: CREATE_NOTE,

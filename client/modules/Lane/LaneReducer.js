@@ -12,7 +12,7 @@ import {
 
 import omit from 'lodash/omit';
 
-const initialState = [];
+const initialState = {};
 
 export default function lanes(state = initialState, action) {
   switch (action.type) {
