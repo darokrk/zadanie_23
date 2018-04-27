@@ -1,1 +1,28 @@
 /* Lane styles */
+.Lanes {
+	display: flex;
+}
+
+.Lane {
+	flex: 1;
+	background-color: #d4d4d4;
+	padding: 10px;
+	text-align: center;
+}
+.LaneHeader {
+}
+.LaneAddNote button, .LaneDelete button {
+	background-color: #907373;
+	color: white;
+	border: none;
+	padding: 10px;
+}
+.LaneAddNote button:hover, .LaneDelete button:hover {
+	cursor: pointer;
+}
+.LaneName {
+	margin: 30px 0;
+	font-size: 34px;
+	text-decoration: underline;
+	color: #4c4040;
+}
