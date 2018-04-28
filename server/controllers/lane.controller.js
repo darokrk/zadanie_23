@@ -57,3 +57,28 @@ export function editLaneName(req, res) {
 		res.json(lane);
 	});
 }
+
+export function moveNoteBetweenLane(req, res) {
+	Lane.findOne({ id: req.params.laneId }).exec((err, lane) => {
+		if (err) {
+			res.status(500).send(err);
+		}
+		const note = lane.notes.find(note => note.id === req.body.noteId);
+		const sourceIndex = lane.notes.indexOf(note);
+		lane.notes.splice(sourceIndex, 1);
+		lane.save(err => {
+			if (err) {
+				res.status(500).send(err);
+			}
+			res.json(lane);
+		});
+		Lane.findOne({ id: req.body.targetLaneId }).then(targetLane => {
+			targetLane.notes.push(note);
+			targetLane.save(err => {
+				if (err) {
+					res.status(500).send(err);
+				}
+			});
+		});
+	});
+}
