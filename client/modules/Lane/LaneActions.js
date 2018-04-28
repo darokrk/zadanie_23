@@ -13,12 +13,7 @@ export const CREATE_LANES = 'CREATE_LANES';
 export const FETCH_LANES = "FETCH_LANES";
 // Export Actions
 
-export function createLanes(lanesData) {
-    return {
-        type: CREATE_LANES,
-        lanes: lanesData,
-    };
-}
+
 
 export function fetchLanes() {
     return (dispatch) => {
@@ -29,6 +24,13 @@ export function fetchLanes() {
             dispatch(createLanes(normalizedLanes));
             dispatch(createNotes(notes));
         });
+    };
+}
+
+export function createLanes(lanesData) {
+    return {
+        type: CREATE_LANES,
+        lanes: lanesData,
     };
 }
 
